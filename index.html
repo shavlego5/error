@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="author" content="Shavlego Botchorishvili" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Page Not Found!</title>
+  </head>
+  <body>
+    <div id="container">
+      <code id="definition">
+        Sorry!!! The Website You Are Looking For Is Not Really Here...
+      </code>
+      <div id="error-text">Page Not Found!</div>
+      <div id="error-code">
+        <div class="four">
+          <div class="four-left"></div>
+          <div class="four-middle"></div>
+          <div class="four-right"></div>
+        </div>
+        <div class="zero">
+          <div class="zero-left"></div>
+          <div class="zero-middle-top">
+            <div></div>
+          </div>
+          <div class="zero-middle-bottom">
+            <div></div>
+          </div>
+          <div class="zero-right"></div>
+        </div>
+        <div class="four">
+          <div class="four-left"></div>
+          <div class="four-middle"></div>
+          <div class="four-right"></div>
+        </div>
+      </div>
+      <ul id="scene"></ul>
+      <div id="buttons">
+        <button class="go-back" onclick="window.history.back()">
+          <h1>Go Back</h1>
+          <div>
+            <img src="images/left.png" alt="" />
+            <img src="images/left.png" alt="" />
+            <img src="images/left.png" alt="" />
+          </div>
+        </button>
+        <a href="#">Home</a>
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script>
+      let scene = document.getElementById("scene");
+      let parallax = new Parallax(scene);
+    </script>
+  </body>
+</html>

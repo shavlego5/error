@@ -1,0 +1,382 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #d1f2eb;
+}
+
+#error-text {
+  display: none;
+}
+
+#scene {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.layer {
+  width: 100%;
+  height: 40%;
+  /* background-color: #bfc9ca; */
+  padding: 0 !important;
+  position: absolute !important;
+  top: 30% !important;
+  left: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.layer h1 {
+  font-size: 10vw;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+#error-code {
+  width: 50%;
+  height: 400px;
+  position: absolute;
+  left: 25%;
+  top: calc(50% - 200px);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.four,
+.zero {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.four-left {
+  width: 50px;
+  height: 300px;
+  position: absolute;
+  left: 50px;
+  top: 0;
+  z-index: 3;
+  background-color: #bfc9ca;
+  -webkit-box-shadow: 10px 10px 31px -11px #000000;
+  box-shadow: 10px 10px 31px -11px #000000;
+  margin-top: -120%;
+  transition: 1s;
+}
+
+.four-middle {
+  width: 235px;
+  height: 50px;
+  position: absolute;
+  left: 25px;
+  top: 225px;
+  z-index: 2;
+  background-color: #bfc9ca;
+  -webkit-box-shadow: 10px 10px 31px -11px #000000;
+  box-shadow: 10px 10px 31px -11px #000000;
+  margin-left: -120%;
+  transition: 1s;
+}
+
+.four-right {
+  width: 50px;
+  height: 250px;
+  position: absolute;
+  right: 15px;
+  bottom: 0;
+  z-index: 1;
+  background-color: #bfc9ca;
+  margin-bottom: -120%;
+  transition: 1s;
+  transition-delay: 0;
+}
+
+.zero-left {
+  width: 50px;
+  height: 196px;
+  background-color: #bfc9ca;
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  margin-left: -100%;
+  transform: scale(0);
+  transition: 1s;
+}
+
+.zero-right {
+  width: 50px;
+  height: 196px;
+  background-color: #bfc9ca;
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  margin-right: -100%;
+  transform: scale(0);
+  transition: 1s;
+}
+
+.zero-middle-top {
+  width: 200px;
+  height: 100px;
+  overflow: hidden;
+  position: absolute;
+  left: 50px;
+  top: 0;
+  margin-top: -100%;
+  transform: scale(0);
+  transition: 1s;
+}
+
+.zero-middle-top div {
+  width: 100px;
+  height: 100px;
+  border: 50px solid #bfc9ca;
+  border-radius: 50%;
+}
+
+.zero-middle-bottom {
+  width: 200px;
+  height: 100px;
+  overflow: hidden;
+  position: absolute;
+  left: 50px;
+  bottom: 0;
+  transform: rotate(180deg) scale(0);
+  margin-bottom: -100%;
+  transition: 1s;
+}
+
+.zero-middle-bottom div {
+  width: 100px;
+  height: 100px;
+  border: 50px solid #bfc9ca;
+  border-radius: 50%;
+}
+
+#buttons {
+  width: 30%;
+  position: absolute;
+  left: 35%;
+  bottom: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.go-back {
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  outline: none;
+  background: linear-gradient(315deg, #dadbdc, #ffffff);
+  box-shadow: -20px -20px 39px #cecfcf, 20px 20px 39px #ffffff;
+  border-radius: 10px;
+  border: 1px solid white;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.go-back:hover {
+  background: linear-gradient(315deg, #ffffff, #dadbdc);
+  box-shadow: -20px -20px 39px #cecfcf, 20px 20px 39px #ffffff;
+  transition: 0.5s;
+}
+
+.go-back:hover h1 {
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+
+.go-back:hover div {
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+
+.go-back h1 {
+  min-width: 100%;
+  height: 100%;
+  font-size: 20px;
+  color: #34495e;
+  padding-top: 30px;
+  line-height: 15px;
+  transition: 0.5s;
+}
+.go-back div {
+  min-width: 100%;
+  height: 100%;
+  padding-top: 10px;
+  transition: 0.5s;
+}
+
+.go-back div img {
+  transition: 0.5s;
+}
+
+.go-back div img:nth-child(2) {
+  transform: translateX(400%);
+}
+
+.go-back div img:nth-child(3) {
+  transform: translateX(800%);
+}
+
+.go-back:hover div img {
+  transform: translateX(0);
+  transition: 0.5s;
+}
+
+#buttons a {
+  width: 200px;
+  height: 15px;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(315deg, #dadbdc, #ffffff);
+  box-shadow: -20px -20px 39px #cecfcf, 20px 20px 39px #ffffff;
+  border-radius: 10px;
+  border: 1px solid white;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 17px;
+  line-height: 16px;
+  color: #34495e;
+  font-weight: bolder;
+  transition: 0.5s;
+}
+
+#buttons a:hover {
+  background: linear-gradient(315deg, #ffffff, #dadbdc);
+  box-shadow: -20px -20px 39px #cecfcf, 20px 20px 39px #ffffff;
+  transition: 0.5s;
+}
+
+#definition {
+  position: absolute;
+  left: 0;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+#definition span {
+  font-size: 0;
+  transition: 0.5s;
+}
+
+@media only screen and (max-width: 1680px) {
+  #error-code {
+    width: 70%;
+    left: 15%;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  #buttons {
+    width: 50%;
+    left: 25%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  #buttons {
+    width: 70%;
+    left: 15%;
+  }
+  #error-code {
+    width: 100%;
+    left: 0;
+  }
+}
+
+@media only screen and (max-width: 824px) {
+  #buttons {
+    width: 100%;
+    left: 0;
+    bottom: 2%;
+  }
+  .four,
+  .zero {
+    width: 150px;
+    height: 200px;
+  }
+
+  .four-left {
+    width: 25px;
+    height: 150px;
+    left: 25px;
+    top: 0;
+  }
+
+  .four-middle {
+    width: 117px;
+    height: 25px;
+    left: 25px;
+    top: 112px;
+  }
+
+  .four-right {
+    width: 25px;
+    height: 125px;
+    right: 7px;
+    bottom: 0;
+  }
+
+  .zero-left {
+    width: 25px;
+    height: 98px;
+    top: 50px;
+    left: 25px;
+  }
+
+  .zero-right {
+    width: 25px;
+    height: 98px;
+    top: 50px;
+    right: 25px;
+  }
+
+  .zero-middle-top {
+    width: 100px;
+    height: 50px;
+    left: 25px;
+    top: 0;
+  }
+
+  .zero-middle-top div {
+    width: 50px;
+    height: 50px;
+    border-width: 25px;
+  }
+
+  .zero-middle-bottom {
+    width: 100px;
+    height: 50px;
+    left: 25px;
+    bottom: 0;
+  }
+
+  .zero-middle-bottom div {
+    width: 50px;
+    height: 50px;
+    border-width: 25px;
+  }
+}
